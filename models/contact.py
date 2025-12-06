@@ -46,3 +46,21 @@ class Contact(models.Model):
     def action_print_contacts(self):
         """Génère un rapport PDF pour les contacts sélectionnés."""
         return self.env.ref("mon_module.action_report_contacts").report_action(self)
+
+    def action_save_and_close(self):
+        """Sauvegarde et retourne à la vue liste."""
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'mon_module.contact',
+            'view_mode': 'kanban,list,form',
+            'target': 'main',
+        }
+
+    def action_cancel(self):
+        """Annule et retourne à la vue liste."""
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'mon_module.contact',
+            'view_mode': 'kanban,list,form',
+            'target': 'main',
+        }
