@@ -14,6 +14,9 @@
         "views/contact_views.xml",
         "report/contact_report_templates.xml",
     ],
+    "demo": [
+        "demo/demo_data.xml",
+    ],
     "installable": True,
     "application": True,
 }
